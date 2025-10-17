@@ -5,14 +5,23 @@ admin.site.site_title="Gestion Conférence 25-26 "
 admin.site.site_header="Gestion Conférences"
 admin.site.index_title="django App conférence"
 #admin.site.register(Conference)
-admin.site.register(Submission)
+#admin.site.register(Submission)
 admin.site.register(Organisation)
 class SubmissionInline(admin.StackedInline):
     model = Submission
     extra= 1
     readonly_fields=("submission_date",)
 
+@admin.action(description="marquer les soumissions comme payaa")  
+def mark_as_payed(modeladmin,req,queryset):
+    queryset.update(payed=True)
+def mark_as_acceptes(modeladmin,rq,queryset):
+    queryset.update(status="accepted")
 
+@admin.register(Submission)
+class SubmissionAdmin(admin.ModelAdmin):
+    list_display = ("title", "payed", "status")
+    actions = [mark_as_payed, mark_as_acceptes]
 
 @admin.register(Conference)
 class AdminConferenceModel(admin.ModelAdmin):

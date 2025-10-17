@@ -1,0 +1,15 @@
+<h1>la liste des conferences </h1>
+<table border="1">
+    <tr>
+        <td>name</td>
+        <td>theme</td>
+        <td>date de conference</td>
+    </tr>
+    {% for c in liste %}
+    <tr>
+        <td>{{c.name}}</td>
+        <td>{{c.theme}}</td>
+        <td>{{c.start_date}} - {{c.end_date}}</td>
+    </tr>
+    {% endfor %}
+</table>

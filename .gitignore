@@ -1,4 +1,7 @@
 # Byte-compiled / optimized / DLL files
+./venv/
+./monproject/db.sqlite3
+./monproject/papers/
 __pycache__/
 *.py[cod]
 *$py.class
@@ -160,4 +163,3 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
-db.splite3
