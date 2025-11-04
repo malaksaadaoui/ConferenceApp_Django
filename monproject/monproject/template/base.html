@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a>home</a>
+        <a href="{%url 'liste_conferences' %}">conference</a>
+        <a>contact</a>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <p>workshop 25/26 - django 3ia2</p>
+    </footer>
+</body>
+</html>
