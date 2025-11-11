@@ -65,7 +65,7 @@ class Submission(models.Model):
             raise ValidationError({"keywords": "Vous ne pouvez pas saisir plus de 10 mots-clés."})
         
         if self.submission_date and self.conference.start_date:
-            if self.Conference.start_date < timezone.now().date():
+            if self.conference.start_date < timezone.now().date():
                 raise ValidationError("La soumission ne peut être faite que pour des conférences à venir.")
             
         if self.user_id:

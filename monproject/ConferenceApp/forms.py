@@ -1,5 +1,5 @@
 from django import forms
-from .models import Conference
+from .models import Conference,Submission
 class ConferenceForm(forms.ModelForm):
     class Meta:
         model=Conference
@@ -11,7 +11,7 @@ class ConferenceForm(forms.ModelForm):
         widgets = {
             'name' : forms.TextInput(
                 attrs = {
-                    'placehloder' :"entrer un titre a la conference",
+                    'placeholder' : "entrer un titre a la conference",
                     'class'  : "",
                 }
             ),
@@ -26,3 +26,11 @@ class ConferenceForm(forms.ModelForm):
                 }
             ),
         }
+
+
+
+
+class SubmissionForm(forms.ModelForm):
+    class Meta:
+        model = Submission
+        fields = ['title', 'abstract', 'keywords', 'paper', 'conference', 'payed','status']  
